@@ -12,7 +12,7 @@ public class BankingApp {
     System.out.println("2. Deposit funds");
     System.out.println("3. Withdraw funds");
     System.out.println("4. Exit");
-  }
+  } //printBankingMenu()
   public static int getChoice() {
     int input;
     while (true) {
@@ -23,9 +23,9 @@ public class BankingApp {
       } catch (Exception e) {
         System.out.println("\nInvalid input. Try again.");
         continue;
-      }
+      }//try-catch
       System.out.println("\nPlease enter a valid choice (1, 2, 3, 4)");
-    }
+    }//while
   }//getChoice()
   public static double getAmount(String action) {
     double amount;
@@ -87,7 +87,7 @@ public class BankingApp {
         }//try-catch-finally
         break;
     }
-  }
+  }//handleChoice()
   
   public static void main(String[] args) throws InterruptedException {
     BankAccount acct = new BankAccount(1234567890, "Ivana Partie");
@@ -99,11 +99,10 @@ public class BankingApp {
       if (choice!=4) {
         handleChoice(choice, acct);
         continue;
-      }
+      }//if
       break;
-    }
+    }//while
     System.out.println("Thanks for using out banking app. Goodbye! :)");
     Thread.sleep(2000);
-  
-  }
-}
+  }//main()
+}//BankingApp
